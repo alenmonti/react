@@ -36,7 +36,7 @@ const App = () => {
                 />
             </div>
 
-            {movies.length > 0
+            {movies
             ? (
                 <div className="container">
                     {movies.map((movie) => {
