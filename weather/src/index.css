@@ -43,7 +43,7 @@ h3 {
 
 .app:before {
   content: "";
-  background-image: url(../public/assets/sunset.jpg);
+  background-image: url(../public/assets/puente.jpg);
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -52,7 +52,7 @@ h3 {
   top: 0px;
   left: 0px;
   z-index: -1;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 main {
