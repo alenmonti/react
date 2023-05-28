@@ -1,0 +1,13 @@
+// await async call
+
+async function serchMovies() {
+    const response = await fetch(requests.requestTrending)
+    const jsonRes = await response.json()
+    setMovies(jsonRes.results);
+}
+
+//         fetch call
+
+fetch(requests.requestTrending)
+    .then((response)=>response.json())
+    .then((response)=>setMovies(response.data.results))
