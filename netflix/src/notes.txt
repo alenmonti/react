@@ -11,3 +11,10 @@ async function serchMovies() {
 fetch(requests.requestTrending)
     .then((response)=>response.json())
     .then((response)=>setMovies(response.data.results))
+
+
+// axios
+
+axios
+    .get(requests.requestTrending)
+    .then((response) => setMovies(response.data.results));

@@ -17,7 +17,7 @@ const Home = () => {
             .then((response) => setMovies(response.data.results));
     }, []);
 
-    //console.log(movie);
+    console.log(movie);
 
     return (
         <div className="w-full h-[600px] text-white">
@@ -25,7 +25,7 @@ const Home = () => {
                 <div className="absolute w-full h-[600px] bg-gradient-to-r from-black"></div>
                 <img
                     className="w-full h-full object-cover"
-                    src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+                    src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
                     alt={movie?.title}
                 />
                 <div className="absolute w-full top-[20%] p-4 md:p-8">
