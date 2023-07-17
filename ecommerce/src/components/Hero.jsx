@@ -9,12 +9,14 @@ const carousel = document.getElementById("carousel");
 
 
 const Hero = () => {
-    const [current, setCurrent] = useState(0);
+    const [current, setCurrent] = useState(2);
     const next = () => {
-        setCurrent((curr) => (curr === imageList.length - 1 ? 0 : curr + 1))
+        console.log(current)
+        setCurrent((curr) => (curr === imageList.length - 1 ? 0 : curr + 1));
     }
     const prev = () => {
-        setCurrent((curr) => (curr === 0 ? imageList.length - 1 : curr - 1))
+        setCurrent((curr) => (curr === 0 ? imageList.length - 1 : curr - 1));
+        console.log(current)
     }
     return (
         <div className="relative w-full">
@@ -25,10 +27,10 @@ const Hero = () => {
                     ))}
                 </div>
             </div>
-            <button className="inline-block absolute right-0 top-[160px] rounded-full bg-white w-16 h-16">
+            <button onClick={next} className="inline-block absolute right-0 top-[50%] rounded-full bg-white w-16 h-16">
                 <FaChevronRight className="text-1xl text-blue-400 mx-auto"/>
             </button>
-            <button className="inline-block absolute left-0 top-[160px] rounded-full bg-white w-16 h-16">
+            <button onClick={prev} className="inline-block absolute left-0 top-[50%] rounded-full bg-white w-16 h-16">
                 <FaChevronLeft className="text-1xl text-blue-400 mx-auto"/>
             </button>
         </div>
