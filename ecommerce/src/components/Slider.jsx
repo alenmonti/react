@@ -5,6 +5,8 @@ import ml1 from "../images/ml1.jpg";
 import ml2 from "../images/ml2.jpg";
 import ml3 from "../images/ml3.jpg";
 const imageList = [ml1, ml2, ml3];
+const tail = ["translate-x-0", "translate-x-[-1760px]", "translate-x-[-3520px]", "gap-[160px]"];
+const gap = 160;
 
 const Slider = () => {
     const [current, setCurrent] = useState(0);
@@ -16,10 +18,10 @@ const Slider = () => {
     };
     return (
         <div className="w-full relative">
-            <div className="w-[85%] mx-auto overflow-hidden">
-                <div id="carousel" className={`flex gap-20 transition-all duration-500 ease-in-out transform -translate-x-full ${current === 0 ? "translate-x-0" : ""} ${current === 1 ? "translate-x-[-87vw]" : ""} ${current === 2 ? "translate-x-[-174vw]" : ""}`}>
+            <div className="w-[1600px] mx-auto relative">
+                <div id="carousel" className={`flex gap-[${gap}px] transition-all duration-500 ease-in-out transform ${`translate-x-[-${current * (1600 + gap)}px]`}`}>
                     {imageList.map((image, index) => (
-                        <img src={image} alt={`Hero ${index}`} key={index} className="w-[1600px] mx-auto" />
+                        <img src={image} alt={`Hero ${index}`} key={index} className="min-w-[1600px]" id="sliderImg" />
                     ))}
                 </div>
             </div>
