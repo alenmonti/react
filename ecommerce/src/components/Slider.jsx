@@ -15,7 +15,7 @@ const Slider = () => {
         setCurrent((current === 0 ? imageList.length - 1 : current - 1));
     };
     return (
-        <div className="w-full">
+        <div className="w-full relative">
             <div className="w-[85%] mx-auto overflow-hidden">
                 <div id="carousel" className={`flex gap-20 transition-all duration-500 ease-in-out transform -translate-x-full ${current === 0 ? "translate-x-0" : ""} ${current === 1 ? "translate-x-[-87vw]" : ""} ${current === 2 ? "translate-x-[-174vw]" : ""}`}>
                     {imageList.map((image, index) => (

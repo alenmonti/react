@@ -19,8 +19,8 @@ const Navbar = () => {
                 <div className="flex cursor-pointer">
                     <CiLocationOn className="text-2xl text-gray-600"/>
                     <div className="flex flex-col">
-                        <p className="text-xs opacity-50 leading-3">Enviar a</p>
-                        <p className="text-sm leading-3">Capital Federal</p>
+                        <p className="text-[10px] opacity-60 leading-3">Enviar a</p>
+                        <p className="text-xs leading-3">Capital Federal</p>
                     </div>
                 </div>
                 <ul className="flex gap-4 text-xs">
