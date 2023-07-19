@@ -13,17 +13,17 @@ const gap = 160;
 const Slider = () => {
     const [current, setCurrent] = useState(0);
     const next = () => {
-        setCurrent((current === sliderList.length - 1 ? 0 : current + 1));
+        setCurrent(current === sliderList.length - 1 ? 0 : current + 1);
     };
     const prev = () => {
-        setCurrent((current === 0 ? sliderList.length - 1 : current - 1));
+        setCurrent(current === 0 ? sliderList.length - 1 : current - 1);
     };
     return (
-        <div className="w-full relative">
+        <div className="w-full relative overflow-x-hidden">
             <div className="w-[1600px] mx-auto relative">
                 <div className={`flex gap-[${gap}px] transition-all duration-500 ease-in-out transform ${`translate-x-[-${current * (1600 + gap)}px]`}`}>
                     {sliderList.map((image, index) => (
-                        <img src={image} alt={`Hero ${index}`} key={index} className="min-w-[1600px]"/>
+                        <img src={image} alt={`Hero ${index}`} key={index} className="min-w-[1600px]" />
                     ))}
                 </div>
             </div>
