@@ -1,8 +1,9 @@
 import React from "react";
 import { BsFillLightningFill } from "react-icons/bs";
+import ml1 from "../images/ml1.jpg"
 const dolarPrice = 500;
 
-const ProductItem = ({ price = 999.99, description = "not found", img }) => {
+const ProductItem = ({ price = 999.99, description = "not found", img={ml1} }) => {
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
@@ -17,7 +18,7 @@ const ProductItem = ({ price = 999.99, description = "not found", img }) => {
     return (
         <div className="bg-white flex flex-col w-[222px] rounded-md mb-6 shadow-md hover:shadow-xl cursor-pointer">
             <div className="h-[222px] overflow-hidden flex justify-center items-center">
-                <img src={img} alt="product item" className="rounded-t-md max-h-[90%] max-w-[90%]" />
+                <img src={img} alt="product item" className="rounded-t-md max-h-[90%] max-w-[90%]" placeholder="" />
             </div>
             <div className="w-full border-t-[1px] border-gray-300"></div>
             <div className="flex flex-col h-[150px] p-4 gap-1">
