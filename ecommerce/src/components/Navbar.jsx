@@ -5,7 +5,7 @@ import {BsCart2} from "react-icons/bs";
 
 const Navbar = ({setOpenCart}) => {
     return (
-        <div className="bg-[#fff159] relative z-50">
+        <div className="bg-[#fff159] relative z-40">
             <div className="w-full max-w-[1200px] mx-auto p-2  grid grid-cols-[max-content_minmax(350px,_1fr)_max-content] grid-rows-[1fr_max-content] gap-x-5 gap-y-4 justify-items-center items-end">     
                 <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.22.13/mercadolibre/logo__large_plus.png" alt="Mercado Libre logo" className="w-[134px] h-[34px] cursor-pointer"/>
                 <div className="w-full max-w-[580px] relative">
