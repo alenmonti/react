@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
 
-const ProductsContainer = ({limit=20, title}) => {
+const ProductsContainer = ({limit=20, title, cartItems, setCartItems}) => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         fetch("https://fakestoreapi.com/products/")
@@ -16,7 +16,7 @@ const ProductsContainer = ({limit=20, title}) => {
             <h1 className="text-2xl font-semibold text-gray-700 my-4">{title}</h1>
             <div className="flex flex-wrap justify-between gap-4 ">
                 {products.map((product, index) => (
-                    <ProductItem key={index} price={product.price} description={product.title} img={product.image} />
+                    <ProductItem key={index} product={{...product, amount:0}} cartItems={cartItems} setCartItems={setCartItems} />
                 ))}
             </div>
         </div>
