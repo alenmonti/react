@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import {textLimit} from "../functions";
 import { formatPrice } from "../functions";
 import { BsFillLightningFill } from "react-icons/bs";
 import { BsPlusLg } from "react-icons/bs";
@@ -11,14 +12,6 @@ const ProductItem = ({ product, cartItems, setCartItems }) => {
     function randomNumberUpTo(max) {
         return Math.floor(Math.random() * max);
     }
-    const textLimit = (text, limit) => {
-        if (text.length > limit) {
-            return text.slice(0, limit) + "...";
-        } else {
-            return text;
-        }
-    };
-
     return (
         <div className="bg-white flex flex-col w-[222px] rounded-md mb-6 shadow-md hover:shadow-xl relative">
             <button
