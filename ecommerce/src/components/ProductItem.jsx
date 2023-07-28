@@ -9,9 +9,6 @@ const dolarPrice = 500;
 const ProductItem = ({ product, cartItems, setCartItems }) => {
     const discount = Math.floor(product.id % 2);
 
-    function randomNumberUpTo(max) {
-        return Math.floor(Math.random() * max);
-    }
     return (
         <div className="bg-white flex flex-col w-[222px] rounded-md mb-6 shadow-md hover:shadow-xl relative">
             <button

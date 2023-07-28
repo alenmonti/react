@@ -3,11 +3,11 @@ import {IoSearchOutline} from "react-icons/io5";
 import {CiLocationOn} from "react-icons/ci";
 import {BsCart2} from "react-icons/bs";
 
-const Navbar = ({setOpenCart}) => {
+const Navbar = ({setProductsFilter, setOpenCart}) => {
     return (
         <div className="bg-[#fff159] relative z-40">
             <div className="w-full max-w-[1200px] mx-auto p-2  grid grid-cols-[max-content_minmax(350px,_1fr)_max-content] grid-rows-[1fr_max-content] gap-x-5 gap-y-4 justify-items-center items-end">     
-                <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.22.13/mercadolibre/logo__large_plus.png" alt="Mercado Libre logo" className="w-[134px] h-[34px] cursor-pointer"/>
+                <img onClick={() => setProductsFilter("")} src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.22.13/mercadolibre/logo__large_plus.png" alt="Mercado Libre logo" className="w-[134px] h-[34px] cursor-pointer"/>
                 <div className="w-full max-w-[580px] relative">
                     <input type="text" name="buscar" placeholder="Buscar productos, marcas y más..." className="h-[40px] w-full rounded-sm pl-3 shadow-md text-sm placeholder-opacity-40 placeholder-gray-500 outline-none"/>
                     <button className="absolute right-0 top-0 h-[40px] w-[46px] flex items-center">
@@ -24,12 +24,12 @@ const Navbar = ({setOpenCart}) => {
                     </div>
                 </div>
                 <ul className="flex gap-4 text-xs">
-                    <li className="cursor-pointer opacity-80 hover:opacity-100">Ofertas</li>
-                    <li className="cursor-pointer opacity-80 hover:opacity-100">Historial</li>
-                    <li className="cursor-pointer opacity-80 hover:opacity-100">Supermercado</li>
-                    <li className="cursor-pointer opacity-80 hover:opacity-100">Moda</li>
-                    <li className="cursor-pointer opacity-80 hover:opacity-100">Vender</li>
-                    <li className="cursor-pointer opacity-80 hover:opacity-100">Ayuda</li>
+                    <li className="cursor-pointer opacity-80 hover:opacity-100"><a onClick={() => setProductsFilter("men's clothing")} href="#Productos">Ropa Hombre</a></li>
+                    <li className="cursor-pointer opacity-80 hover:opacity-100"><a onClick={() => setProductsFilter("women's clothing")} href="#Productos">Ropa Mujer</a></li>
+                    <li className="cursor-pointer opacity-80 hover:opacity-100"><a onClick={() => setProductsFilter("electronics")} href="#Productos">Electrodomesticos</a></li>
+                    <li className="cursor-pointer opacity-80 hover:opacity-100"><a onClick={() => setProductsFilter("jewelery")} href="#Productos">Joyas</a></li>
+                    <li className="cursor-pointer opacity-80 hover:opacity-100"><a onClick={() => setProductsFilter("")} href="#Productos">Todo</a></li>
+                    <li className="cursor-pointer opacity-80 hover:opacity-100"><a href="https://www.mercadolibre.com.ar/ayuda" target="_blank">Ayuda</a></li>
                 </ul>
                 <div className="flex gap-5">
                 <nav className="flex gap-3 text-xs">
