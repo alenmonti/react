@@ -3,6 +3,8 @@ import {textLimit} from "../functions";
 import { formatPrice } from "../functions";
 import { BsFillLightningFill } from "react-icons/bs";
 import { BsPlusLg } from "react-icons/bs";
+import { FaRegEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const ProductItem = ({ product, cartItems, setCartItems }) => {
@@ -10,22 +12,28 @@ const ProductItem = ({ product, cartItems, setCartItems }) => {
 
     return (
         <div className="bg-white flex flex-col w-[222px] rounded-md mb-6 shadow-md hover:shadow-xl relative">
-            <button
-                onClick={() => {
-                    if (cartItems.some((item) => item.id === product.id)) {
-                        setCartItems((prev) => {
-                            return prev.map((item) => {
-                                if (item.id === product.id) return { ...item, amount: item.amount + 1 };
-                                else return item;
+            <div className="absolute top-0 right-0 z-30 flex flex-col gap-2 m-2">
+                <button
+                    onClick={() => {
+                        if (cartItems.some((item) => item.id === product.id)) {
+                            setCartItems((prev) => {
+                                return prev.map((item) => {
+                                    if (item.id === product.id) return { ...item, amount: item.amount + 1 };
+                                    else return item;
+                                });
                             });
-                        });
-                    } else {
-                        setCartItems((prev) => [...prev, { ...product, amount: 1 }]);
-                    }
-                }}
-                className="text-center text-2xl m-3 p-1 cursor-pointer absolute top-0 right-0 z-30 bg-red-300 shadow-md rounded-sm">
-                <BsPlusLg size={15} />
-            </button>
+                        } else {
+                            setCartItems((prev) => [...prev, { ...product, amount: 1 }]);
+                        }
+                    }}
+                    className="text-center text-2xl p-1 cursor-pointer bg-red-300 shadow-md rounded-sm">
+                    <BsPlusLg size={15} />
+                </button>
+                <Link to={`/product/${product.id}`}
+                    className="text-center text-2xl p-1 cursor-pointer bg-white shadow-md rounded-sm">
+                    <FaRegEye size={15} />
+                </Link>
+            </div>
             <div className="h-[222px] overflow-hidden flex justify-center items-center">
                 <img src={product.image} alt="product item" className="rounded-t-md max-h-[90%] max-w-[90%]" placeholder="" />
             </div>

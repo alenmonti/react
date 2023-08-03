@@ -25,7 +25,7 @@ const App = () => {
             <NavBar setProductsFilter={setProductsFilter} setOpenCart={setOpenCart} />
             <Routes>
                 <Route path="/" element={<Home {...HomeProps} />} />
-                <Route path="/product/:id" element={<ProductPage products={products}/>} />
+                <Route path="/product/:id" element={<ProductPage cartItems={cartItems} setCartItems={setCartItems}/>} />
             </Routes>
             <SideCart openCart={openCart} setOpenCart={setOpenCart} cartItems={cartItems} setCartItems={setCartItems}/>
             <Footer />

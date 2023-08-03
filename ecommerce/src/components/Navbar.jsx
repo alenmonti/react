@@ -2,12 +2,15 @@ import React from "react";
 import {IoSearchOutline} from "react-icons/io5";
 import {CiLocationOn} from "react-icons/ci";
 import {BsCart2} from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Navbar = ({setProductsFilter, setOpenCart}) => {
     return (
         <div className="bg-[#fff159] relative z-40">
-            <div className="w-full max-w-[1200px] mx-auto p-2  grid grid-cols-[max-content_minmax(350px,_1fr)_max-content] grid-rows-[1fr_max-content] gap-x-5 gap-y-4 justify-items-center items-end">     
+            <div className="w-full max-w-[1200px] mx-auto p-2  grid grid-cols-[max-content_minmax(350px,_1fr)_max-content] grid-rows-[1fr_max-content] gap-x-5 gap-y-4 justify-items-center items-end">
+                <Link to="/">
                 <img onClick={() => setProductsFilter("")} src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.22.13/mercadolibre/logo__large_plus.png" alt="Mercado Libre logo" className="w-[134px] h-[34px] cursor-pointer"/>
+                </Link>  
                 <div className="w-full max-w-[580px] relative">
                     <input type="text" name="buscar" placeholder="Buscar productos, marcas y más..." className="h-[40px] w-full rounded-sm pl-3 shadow-md text-sm placeholder-opacity-40 placeholder-gray-500 outline-none"/>
                     <button className="absolute right-0 top-0 h-[40px] w-[46px] flex items-center">
