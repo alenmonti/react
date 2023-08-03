@@ -4,7 +4,6 @@ import { formatPrice } from "../functions";
 import { BsFillLightningFill } from "react-icons/bs";
 import { BsPlusLg } from "react-icons/bs";
 
-const dolarPrice = 500;
 
 const ProductItem = ({ product, cartItems, setCartItems }) => {
     const discount = Math.floor(product.id % 2);
