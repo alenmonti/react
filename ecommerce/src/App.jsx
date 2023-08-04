@@ -22,7 +22,7 @@ const App = () => {
     const HomeProps = {productsFilter, products, cartItems, setCartItems};
     return (
         <Router>
-            <NavBar setProductsFilter={setProductsFilter} setOpenCart={setOpenCart} />
+            <NavBar setProductsFilter={setProductsFilter} setOpenCart={setOpenCart} cartItems={cartItems} />
             <Routes>
                 <Route path="/" element={<Home {...HomeProps} />} />
                 <Route path="/product/:id" element={<ProductPage cartItems={cartItems} setCartItems={setCartItems}/>} />
